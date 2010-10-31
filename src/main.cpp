@@ -1,10 +1,11 @@
 #include <iostream>
+#include "observer.h"
 
 using namespace std;
 
 int main(void)
 {
-    load_plugins();
-    cout << "Hey";
+    Observer* observer = new Observer("/dir/to/observe/");
+    observer->observe();
     return 1;
 }

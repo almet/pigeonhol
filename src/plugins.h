@@ -8,7 +8,6 @@ using namespace std;
 class Plugin
 {
     public:
-
 	vector<Plugin> loadPlugins();
 
 	/**
