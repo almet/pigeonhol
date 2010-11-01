@@ -3,17 +3,18 @@ LIB = lib/
 SRC = src/
 BUILD = build/
 OBJ = $(BUILD)main.o $(BUILD)observer.o
+LIBS = inotify-cxx
 CPP = g++
-FLAGS = -Wall -ansi -pedantic-errors
-LIBS =  
+CXXFLAGS = -Wall -ansi -pedantic-errors
 
-compile:
+all: 
 	if [ ! -d "$(BUILD)" ]; then \
 		mkdir $(BUILD); \
 	fi
-	$(CPP) -c $(SRC)main.cpp -o $(BUILD)main.o $(FLAGS)
-	$(CPP) -c $(SRC)observer.cpp -o $(BUILD)observer.o $(FLAGS)
-	$(CPP) $(OBJ) -o $(BUILD)$(PROJECT) $(FLAGS) -L $(LIB) $(LIBS)
+	$(CPP) -c $(SRC)main.cpp -o $(BUILD)main.o $(CXXFLAGS)
+	$(CPP) -c $(SRC)observer.cpp -o $(BUILD)observer.o $(CXXFLAGS)
+	$(CPP) $(OBJ) -L $(LIB) -l$(LIBS) -o $(BUILD)$(PROJECT) $(CXXFLAGS) 
 
 compilelib:
-	g++ lib/inotify-cxx.cpp -shared -o lib/libinotify.lib
+	$(CPP) -c $(LIB)inotify-cxx.cpp -o $(LIB)inotify-cxx.o
+	ar -q $(LIB)libinotify-cxx.a $(LIB)inotify-cxx.o
