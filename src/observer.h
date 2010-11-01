@@ -1,5 +1,5 @@
-#ifndef __OBSERVER
-#define __OBSERVER
+#ifndef __OBSERVER_H
+#define __OBSERVER_H
 
 class Observer {
     const char* path;
