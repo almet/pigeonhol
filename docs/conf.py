@@ -10,7 +10,7 @@ import sys, os
 templates_path = ['_templates']
 source_suffix = '.rst'
 master_doc = 'index'
-project = u'Pigeonhole'
+project = u'Pigeonhol'
 copyright = u'2010, Alexis Metaireau'
 exclude_patterns = ['_build']
 pygments_style = 'sphinx'
@@ -27,7 +27,7 @@ html_theme = 'flask_small'
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
-    'github_fork': 'ametaireau/pigeonhole',
+    'github_fork': 'ametaireau/pigeonhol',
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
@@ -110,7 +110,7 @@ htmlhelp_basename = 'Raclettedoc'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'Pigeonhole.tex', u'Pigeonhole Documentation',
+  ('index', 'Pigeonhol.tex', u'Pigeonhol Documentation',
    u'Alexis Métaireau', 'manual'),
 ]
 
@@ -143,6 +143,6 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'pigeonhole', u'Pigeonhole Documentation',
+    ('index', 'pigeonhol', u'Pigeonhol Documentation',
      [u'Alexis Métaireau'], 1)
 ]
