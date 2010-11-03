@@ -4,6 +4,9 @@ Pigeonhole
 Pigeonhole is a simple script wrote in C++, that takes care, for you, about the
 organisation of your folders.
 
+*This piece of software have been made during my course of paradigms of
+programing, while studdying at the oxford brookes university.*
+
 It's been created to help you doing some basic stuff, like categorizing files in
 folder regarding their extensions.
 
@@ -41,3 +44,14 @@ The conditions can be checked on:
 * date
 * size
 * folder
+
+Internal structure
+===================
+
+Internallyn pigeonhole use the inotify mechanism, that is a part of the linux
+kernel, to watch out the different modifications to the folders/files of a
+specific directory.
+
+Here is a UML class diagram:
+
+.. image::
