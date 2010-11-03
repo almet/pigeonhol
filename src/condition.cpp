@@ -3,6 +3,6 @@
 Condition::Condition(){
 }
 
-bool Condition::isMet(){
+bool Condition::isMet(File f){
     return true;
 }

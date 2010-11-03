@@ -2,7 +2,7 @@ PROJECT = pigeonhol
 LIB = lib/
 SRC = src/
 BUILD = build/
-OBJ = $(BUILD)main.o $(BUILD)observer.o $(BUILD)utils.o $(BUILD)file.o $(BUILD)condition.o
+OBJ = $(BUILD)main.o $(BUILD)observer.o $(BUILD)utils.o $(BUILD)file.o $(BUILD)condition.o $(BUILD)rules.o
 LIBS = inotify-cxx
 CPP = g++
 CXXFLAGS = -Wall -ansi -pedantic-errors
@@ -15,6 +15,7 @@ all: compilelib
 	$(CPP) -c $(SRC)utils.cpp -o $(BUILD)utils.o $(CXXFLAGS)
 	$(CPP) -c $(SRC)file.cpp -o $(BUILD)file.o $(CXXFLAGS)
 	$(CPP) -c $(SRC)condition.cpp -o $(BUILD)condition.o $(CXXFLAGS)
+	$(CPP) -c $(SRC)rules.cpp -o $(BUILD)rules.o $(CXXFLAGS)
 	$(CPP) -c $(SRC)main.cpp -o $(BUILD)main.o $(CXXFLAGS)
 	$(CPP) $(OBJ) -L $(LIB) -l$(LIBS) -o $(BUILD)$(PROJECT) $(CXXFLAGS) 
 

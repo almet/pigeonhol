@@ -1,10 +1,9 @@
-#ifndef __PLUGIN_H
-#define __PLUGIN_H
+#ifndef __RULES_H
+#define __RULES_H
 
+#include <iostream>
 #include <vector>
 #include <string>
-#include <boost/foreach.hpp>
-#define foreach BOOST_FOREACH
 
 #include "condition.h"
 #include "file.h"
@@ -12,13 +11,13 @@
 
 using namespace std;
 
-class Plugin
+class Rule
 {
    vector<Condition> _conditions;
    string _script;
 
 public:
-    Plugin(vector<Condition>, string);
+    Rule(vector<Condition>, string);
     void run(File);
 };
 #endif
