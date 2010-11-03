@@ -1,6 +1,8 @@
 Pigeonhol
 #########
 
+*Rules based files organiser*
+
 Pigeonhol is a simple script wrote in C++, that takes care, for you, about the
 organisation of your folders.
 
