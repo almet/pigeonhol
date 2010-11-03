@@ -6,6 +6,6 @@
 class Condition {
 public:
 	Condition();
-	bool isMet(File);
+	bool isMet(File&) const;
 };
 #endif
