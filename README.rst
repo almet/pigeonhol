@@ -1,7 +1,7 @@
-Pigeonhole
-##########
+Pigeonhol
+#########
 
-Pigeonhole is a simple script wrote in C++, that takes care, for you, about the
+Pigeonhol is a simple script wrote in C++, that takes care, for you, about the
 organisation of your folders.
 
 *This piece of software have been made during my course of paradigms of
@@ -20,7 +20,7 @@ folder regarding their extensions.
 
     Wikipedia.
 
-I've tried to make pigeonhole as extensible as I can, so its currently working
+I've tried to make pigeonhol as extensible as I can, so its currently working
 with a concept of `plugins`.
 
 Plugins
@@ -48,7 +48,7 @@ The conditions can be checked on:
 Internal structure
 ===================
 
-Internallyn pigeonhole use the inotify mechanism, that is a part of the linux
+Internallyn pigeonhol use the inotify mechanism, that is a part of the linux
 kernel, to watch out the different modifications to the folders/files of a
 specific directory.
 
