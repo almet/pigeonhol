@@ -5,12 +5,12 @@ Observer::Observer(){
     cout << "creating the observer" << endl;
 }
 
-void Observer::observe(string path){
+void Observer::observe(string path, vector<Rule> rules){
     this->_observing[path] = true;
     try {
         Inotify notify;
  
-        InotifyWatch watch(path, IN_ALL_EVENTS);
+        InotifyWatch watch(path, IN_CREATE);
         notify.Add(watch);
 		cout << "Start observing for changes in " << path << endl;
  
@@ -27,10 +27,7 @@ void Observer::observe(string path){
                     event.DumpTypes(mask_str);
  
                     string filename = event.GetName();
- 
-                    cout << "[watch " << path << "] ";
-                    cout << "event mask: \"" << mask_str << "\", ";
-                    cout << "filename: \"" << filename << "\"" << endl;
+                    this->run_rules(rules, path + '/' + filename, mask_str); 
                 }
  
                 count--;
@@ -43,6 +40,16 @@ void Observer::observe(string path){
      } catch (...) {
          cerr << "unknown exception occured" << endl;
      }
+}
+
+void Observer::run_rules(vector<Rule> rules, string filename, string masks){
+    // FIXME consider we can have directories too here (basically we just want to remove them)
+    File file = File(filename);
+
+    vector<Rule>::const_iterator rule;
+    for(rule = rules.begin(); rule != rules.end(); ++rule ){	
+        rule->run(file);
+    }
 }
 
 bool Observer::stop(string path){

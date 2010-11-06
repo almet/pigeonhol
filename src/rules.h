@@ -18,6 +18,6 @@ class Rule
 
 public:
     Rule(vector<Condition>, string);
-    void run(File);
+    void run(File) const;
 };
 #endif
