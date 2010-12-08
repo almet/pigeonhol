@@ -69,7 +69,7 @@ void Observer::run_rules(vector<Rule> rules, string filename, string masks){
 
     vector<Rule>::const_iterator rule;
     for(rule = rules.begin(); rule != rules.end(); ++rule ){	
-        rule->run(file);
+        rule->process(file);
     }
 }
 

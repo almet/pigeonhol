@@ -14,8 +14,9 @@ Rule::Rule(vector<Condition> conditions, string script){
     this->_script = script;
 }
 
-void Rule::run(File file) const{
-    
+void Rule::process(File file) const{
+
+    // iterate over all the rules
     vector<Condition>::const_iterator iterator;
     for(iterator = this->_conditions.begin();
      iterator != this->_conditions.end(); ++iterator ){

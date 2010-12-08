@@ -7,7 +7,6 @@
 
 #include "condition.h"
 #include "file.h"
-#include "utils.h"
 
 using namespace std;
 
@@ -22,7 +21,6 @@ public:
      * if all the conditons are met
      */
     Rule(vector<Condition>, string);
-    void run(File) const;
 
     /**
      * When processing the rule, it will check that all the conditions are met,
@@ -31,5 +29,6 @@ public:
      * @param File file: the file to check against the conditions.
      * @return void
      */
+    void process(File) const;
 };
 #endif
