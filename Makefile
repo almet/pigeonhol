@@ -3,7 +3,7 @@ LIB = lib/
 SRC = src/
 BUILD = build/
 OBJ = $(BUILD)main.o $(BUILD)observer.o $(BUILD)utils.o $(BUILD)file.o $(BUILD)condition.o $(BUILD)rules.o
-LIBS = inotify-cxx
+LIBS = inotify-cxx -Itinyxml
 CPP = g++
 CXXFLAGS = -Wall -ansi -pedantic-errors
 

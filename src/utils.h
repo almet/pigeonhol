@@ -6,5 +6,6 @@
 using namespace std;
 
 string findAndReplace(string, string, string);
+bool endsWith(string const &fullString, string const &ending);
 
 #endif

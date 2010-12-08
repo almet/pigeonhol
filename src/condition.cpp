@@ -5,15 +5,17 @@
  *
  * @param string str the string to look at
  */
-FilenameEquals::FilenameEquals(string str){
+FileExtensionIs::FileExtensionIs(string str){
     this->_str = str;
 }
 
 /**
- * Check that the file name equals the given parameter
+ * Check that the file extension is the given one.
+ *
+ * @param File f
  */
-bool FilenameEquals::isMet(File& f) {
-    return true;
+bool FileExtensionIs::isMet(File* f) {
+    return f->matchExtension(this->_str);
 }
 
 /**
@@ -31,6 +33,6 @@ FilenameContains::FilenameContains(string str){
  *
  * TODO: Really check it !
  */
-bool FilenameContains::isMet(File& f) {
+bool FilenameContains::isMet(File* f) {
     return true; // return true each time now, but need to look at the real file name to say so
 }

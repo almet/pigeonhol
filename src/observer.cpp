@@ -65,7 +65,7 @@ void Observer::observe(string path, vector<Rule*> rules){
  */
 void Observer::run_rules(vector<Rule*> rules, string filename, string masks){
     // FIXME consider we can have directories too here (basically we just want to remove them)
-    File file = File(filename);
+    File* file = new File(filename);
 
     vector<Rule*>::iterator iterator;
     for(iterator = rules.begin(); iterator != rules.end(); ++iterator){	

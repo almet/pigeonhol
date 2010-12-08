@@ -10,5 +10,6 @@ class File {
 public:
 	File(string);
 	string getName();
+	bool matchExtension(string ext);
 };
 #endif

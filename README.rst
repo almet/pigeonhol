@@ -44,6 +44,10 @@ This example will unzip files when a zip file have been found. For now, it is
 only possible to use the filename to get informations, but the code is easy to
 change.
 
+Note: this is not finished, and the config parser is not implemented so far.
+Currently, the sofware looks for .zip files in the "observed" folder, and
+extract them in "extracted". It also create a `pigeonhole.log` file.
+
 Internal structure
 ===================
 

@@ -15,7 +15,7 @@ Rule::Rule(vector<Condition*> conditions, string script){
     this->_script = script;
 }
 
-void Rule::process(File file){
+void Rule::process(File* file){
 
     // iterate over all the rules
     vector<Condition*>::iterator iterator;
@@ -26,6 +26,6 @@ void Rule::process(File file){
     }
 
     // otherwise, call the given action on the system
-    cout << "action to be done on " << file.getName() << endl;
-    system(findAndReplace(this->_script, "%filename%", file.getName()).c_str());
+    cout << "action to be done on " << file->getName() << endl;
+    system(findAndReplace(this->_script, "%filename%", file->getName()).c_str());
 }

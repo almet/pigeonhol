@@ -6,15 +6,15 @@
 // that's the condition interface; A condtion have just to be met
 class Condition {
     public:
-    virtual bool isMet(File&) = 0;
+    virtual bool isMet(File*) = 0;
 };
 
-class FilenameEquals : public Condition
+class FileExtensionIs : public Condition
 {
     string _str;
     public:
-    FilenameEquals(string);
-    bool isMet(File&);
+    FileExtensionIs(string);
+    bool isMet(File*);
 };
 
 class FilenameContains : public Condition
@@ -22,6 +22,6 @@ class FilenameContains : public Condition
     string _str;
     public:
     FilenameContains(string);
-    bool isMet(File&);
+    bool isMet(File*);
 };
 #endif

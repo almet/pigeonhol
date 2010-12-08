@@ -29,6 +29,6 @@ public:
      * @param File file: the file to check against the conditions.
      * @return void
      */
-    void process(File);
+    void process(File*);
 };
 #endif

@@ -8,21 +8,15 @@ using namespace std;
 
 int main(void)
 {
-    // FIXME: replace with the use of a config parser
     vector<Condition*> conditions;
-    conditions.push_back(new FilenameEquals("test.zip"));
-
     vector<Rule*> rules;
-    rules.push_back(new Rule(conditions, "echo '%filename%' >> /tmp/pigeonhol"));
+
+    // FIXME: replace with the use of a config parser.
+    conditions.push_back(new FileExtensionIs("zip"));
+    rules.push_back(new Rule(conditions, "sleep 1 && unzip '%filename%' -d extracted >pigeonhol.log"));
 
     Observer* obs = new Observer();
-    obs->observe("/home/alexis/Downloads", rules);
+    obs->observe("observed", rules); // this value should be read from a config file too.
 
-    /*
-	// Config* config = new Config("/path/to/config");
-	// for each config entry related to paths, add it
-        obs->observe("/home/alexis/Images");
-	obs->stop("/home/alexis/Downloads");
-    */
     return 1;
 }
