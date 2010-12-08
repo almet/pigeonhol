@@ -1,5 +1,6 @@
 #include "rules.h"
 #include <stdlib.h>
+#include "utils.h"
 
 /**
  * Create the rule.
