@@ -73,7 +73,6 @@ void Observer::run_rules(vector<Rule> rules, string filename, string masks){
     }
 }
 
-bool Observer::stop(string path){
-    cout << "stoping";
-    return true;
+void Observer::stop(string path){
+    cout << "stop watching the repository" << path << endl;
 }

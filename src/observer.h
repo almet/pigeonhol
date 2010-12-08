@@ -17,6 +17,6 @@ class Observer {
 public:
     Observer();
     void observe(string, vector<Rule>);
-    bool stop(string);
+    void stop(string);
 };
 #endif
