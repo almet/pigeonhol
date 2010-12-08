@@ -8,6 +8,7 @@ using namespace std;
 
 int main(void)
 {
+    // FIXME: replace with the use of a config parser
     vector<Condition> conditions;
     vector<Rule> rules;
     rules.push_back(Rule(conditions, "echo '%filename%' >> /tmp/pigeonhol"));

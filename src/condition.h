@@ -3,6 +3,7 @@
 
 #include "file.h"
 
+// that's the condition interface; A condtion have jsut to be met
 class Condition {
 public:
 	Condition();

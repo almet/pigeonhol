@@ -1,1 +1,2 @@
-Support threading and non blockant calls, to observe multiple dirs.
+* Support threading and non blockant calls, to observe multiple dirs.
+* Parse the XML file and get the file to watch +  the conditions to build.

@@ -1,10 +1,20 @@
 #include "observer.h"
 #include "inotify-cxx.h"
 
+/**
+ * Create the observer
+ */
 Observer::Observer(){
     cout << "creating the observer" << endl;
 }
 
+/**
+ * Tell the observer to watch the given folder. 
+ * Then, the observer will process all the rules
+ *
+ * @param string path the path to be watched
+ * @param vector<Rule> the list of rules to be checked
+ */
 void Observer::observe(string path, vector<Rule> rules){
     this->_observing[path] = true;
     try {
@@ -42,6 +52,17 @@ void Observer::observe(string path, vector<Rule> rules){
      }
 }
 
+/**
+ * This method will be called if modifications have been catched on existing
+ * files.
+ *
+ * For now, the rules will be only checked if the file is a new one.
+ * FIXME: consider the other use cases (modification, suppression and so on
+ *
+ * @param vector<Rule> the list of rules to be checked
+ * @param string filename the filename that have changed
+ * @param string masks the changes on this file
+ */
 void Observer::run_rules(vector<Rule> rules, string filename, string masks){
     // FIXME consider we can have directories too here (basically we just want to remove them)
     File file = File(filename);
