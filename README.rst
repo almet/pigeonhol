@@ -7,10 +7,11 @@ Pigeonhol is a simple script wrote in C++, that takes care, for you, about the
 organisation of your folders.
 
 *This piece of software have been made during my course of paradigms of
-programing, while studdying at the oxford brookes university.*
+programing, while studying at the oxford brookes university.*
 
 It's been created to help you doing some basic stuff, like categorizing files in
 folder regarding their extensions.
+
 
     Pigeonholing is a term used to describe processes that attempt to classify
     disparate entities into a small number of categories (usually, mutually
@@ -22,16 +23,15 @@ folder regarding their extensions.
 
     Wikipedia.
 
+
 I've tried to make pigeonhol as extensible as I can, so its currently working
-with a concept of `plugins`.
+with a concept of `rules`.
 
 Plugins
 =======
 
-Plugins are simple scripts that can be called when a set of conditions are
-met.
-
-It's possible to define the plugins using an XML file::
+Rules are defined in an XML file, and tell what action have to be called when
+a set of conditions is met::
 
     <plugins>
         <plugin name="unzip">
@@ -40,20 +40,20 @@ It's possible to define the plugins using an XML file::
         </plugin>
     </plugins>
 
-The conditions can be checked on:
-
-* type
-* date
-* size
-* folder
+This example will unzip files when a zip file have been found. For now, it is
+only possible to use the filename to get informations, but the code is easy to
+change.
 
 Internal structure
 ===================
 
-Internallyn pigeonhol use the inotify mechanism, that is a part of the linux
+Internally pigeonhol use the inotify mechanism, that is a part of the linux
 kernel, to watch out the different modifications to the folders/files of a
-specific directory.
+specific directory, so it is only linux compliant.
 
-Here is a UML class diagram:
+Feedback
+========
 
-.. image::
+This is basically a proof of concept, but I think it can be useful then. If you
+have any feedback on features you want to add, or about the code, drop me
+a mail at alexis at notmyidea.org !
