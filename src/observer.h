@@ -12,11 +12,11 @@ using namespace std;
 class Observer {
     vector<string> _paths;
     map<string, bool> _observing;
-    void run_rules(vector<Rule>, string, string);
+    void run_rules(vector<Rule*>, string, string);
 
 public:
     Observer();
-    void observe(string, vector<Rule>);
+    void observe(string, vector<Rule*>);
     void stop(string);
 };
 #endif

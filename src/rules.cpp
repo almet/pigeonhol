@@ -10,19 +10,17 @@
  * This name could contain some special characters, like %filename, that will
  * be replaced before running them, by the real name of the file.
  */
-Rule::Rule(vector<Condition> conditions, string script){
+Rule::Rule(vector<Condition*> conditions, string script){
     this->_conditions = conditions;
     this->_script = script;
 }
 
-void Rule::process(File file) const{
+void Rule::process(File file){
 
     // iterate over all the rules
-    vector<Condition>::const_iterator iterator;
-    for(iterator = this->_conditions.begin();
-     iterator != this->_conditions.end(); ++iterator ){
-
-        if (!iterator->isMet(file)){
+    vector<Condition*>::iterator iterator;
+    for(iterator = this->_conditions.begin(); iterator != this->_conditions.end(); ++iterator ){
+        if (!(*iterator)->isMet(file)){
             return; // exists if one condition is not met
         }
     }

@@ -15,7 +15,7 @@ Observer::Observer(){
  * @param string path the path to be watched
  * @param vector<Rule> the list of rules to be checked
  */
-void Observer::observe(string path, vector<Rule> rules){
+void Observer::observe(string path, vector<Rule*> rules){
     this->_observing[path] = true;
     try {
         Inotify notify;
@@ -63,13 +63,13 @@ void Observer::observe(string path, vector<Rule> rules){
  * @param string filename the filename that have changed
  * @param string masks the changes on this file
  */
-void Observer::run_rules(vector<Rule> rules, string filename, string masks){
+void Observer::run_rules(vector<Rule*> rules, string filename, string masks){
     // FIXME consider we can have directories too here (basically we just want to remove them)
     File file = File(filename);
 
-    vector<Rule>::const_iterator rule;
-    for(rule = rules.begin(); rule != rules.end(); ++rule ){	
-        rule->process(file);
+    vector<Rule*>::iterator iterator;
+    for(iterator = rules.begin(); iterator != rules.end(); ++iterator){	
+        (*iterator)->process(file);
     }
 }
 

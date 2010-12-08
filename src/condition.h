@@ -3,10 +3,25 @@
 
 #include "file.h"
 
-// that's the condition interface; A condtion have jsut to be met
+// that's the condition interface; A condtion have just to be met
 class Condition {
-public:
-	Condition();
-	bool isMet(File&) const;
+    public:
+    virtual bool isMet(File&) = 0;
+};
+
+class FilenameEquals : public Condition
+{
+    string _str;
+    public:
+    FilenameEquals(string);
+    bool isMet(File&);
+};
+
+class FilenameContains : public Condition
+{
+    string _str;
+    public:
+    FilenameContains(string);
+    bool isMet(File&);
 };
 #endif
